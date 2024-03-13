@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Blogs from './Components/Blogs/Blogs'
+import Bookmarks from './Components/Bookmarks/Bookmarks'
+import Header from './Components/Header/Blogs'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-3xl font-bold text-red-500'>Vite + React</h1>
+    <Header></Header>
+    <main className='flex justify-between items-center'>
+      <Blogs></Blogs>
+      <Bookmarks></Bookmarks>
+    </main>
+      
     </>
   )
 }
