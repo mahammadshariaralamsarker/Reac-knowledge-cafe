@@ -7,8 +7,9 @@ import Header from './Components/Header/Blogs'
 
 function App() {
   const [bookmarks, setbookmarks]= useState([])
-  const handleAddToBookmark =()=>{
-    console.log('You are all right');
+  const handleAddToBookmark =(blog)=>{
+    const newbookmarks= [...bookmarks,blog]
+    setbookmarks(newbookmarks);
   }
 
   return (
@@ -16,9 +17,9 @@ function App() {
     <Header></Header>
     <main className='flex justify-between items-center'>
       <Blogs
-      handleAddToBookmark={()=>handleAddToBookmark()}
+      handleAddToBookmark={handleAddToBookmark}
       ></Blogs>
-      <Bookmarks></Bookmarks>
+    <Bookmarks bookmarks={bookmarks}></Bookmarks>
     </main>
       
     </>

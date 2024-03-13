@@ -4,7 +4,7 @@ import { CiBookmarkPlus } from "react-icons/ci";
 function Blog({ blog,handleAddToBookmark }) {
     const { title, cover, reading_time, author,hashtags, author_img, posted_date } = blog;
     return (
-        <div className=''>
+        <div className='mr-16'>
             <img className='w-full' src={cover} alt="" />
             <div className='flex justify-between'>
                 <div className='flex items-center'>
@@ -16,7 +16,7 @@ function Blog({ blog,handleAddToBookmark }) {
                 </div>
                 <div>
                     <span className='mr-4 '>{reading_time} Min Read</span>
-                    <button onClick={handleAddToBookmark}><CiBookmarkPlus /></button>
+                    <button onClick={()=>handleAddToBookmark(blog)}><CiBookmarkPlus /></button>
                 </div>
             </div>
             <h1 className="text-2xl">{title}</h1>
@@ -29,7 +29,7 @@ function Blog({ blog,handleAddToBookmark }) {
         </div>
     )
 }
-Blog.PropTypes = {
+Blog.propTypes = {
     blog: PropTypes.object.isRequired
 }
 export default Blog
